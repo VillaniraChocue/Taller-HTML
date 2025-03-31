@@ -1,0 +1,386 @@
+/* Variables */
+:root {
+  --main-color: #191c32;
+  --primary-color: aqua;
+  --secondary-color: #fff;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main styling */
+body,
+html {
+  font-family: "Raleway", sans-serif;
+  color: var(--secondary-color);
+  line-height: 1.7em;
+  background-color: var(--main-color);
+}
+
+hr {
+  border: 0.5px solid var(--secondary-color);
+}
+
+/* Utility Classes */
+a {
+  text-decoration: none;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 30px;
+}
+
+.section {
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.line-break {
+  padding-bottom: 10px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  position: relative;
+  padding-bottom: 1rem;
+  line-height: 1;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.title:before {
+  content: attr(data-title);
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.title:after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 5px;
+  border-radius: 3px;
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.text {
+  max-width: 600px;
+  margin: 0 auto;
+}
+/*estilo barra de navegacio*/
+.navbar {
+  position: fixed;
+  top:0;/*para la parte superior par que la barra se quede fija en la posicion cero*/
+  z-index: 5;/*colocar capa sobre otra si le damos valor negativo esta por debajo de los demas y posito esta por encima de otros elementos*/
+  width: 100%;
+  overflow:hidden;/**/
+  background-color: var(--min-color);
+}
+.nav-container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 30px;
+}
+.navbar .logo {
+  float: left;
+  padding-top: 20px;
+}
+.navbar a {
+  color: var(--secondary-color);
+}
+.navbar span {
+  color: var(--primary-color)
+}
+.navbar ul {
+  list-style:none;
+  float: right;
+}
+.navbar ul li {
+  float: left;
+}
+
+.navbar ul li a {
+  padding: 20px;
+  text-align: center;
+  display: block;
+}
+
+.navbar ul li a:hover {
+  background: var(--primary-color);
+  color: var(--main-color);
+}
+
+.navbar ul li a.current {
+  color: var(--primary-color);
+}
+
+.navbar ul li a.current:hover{
+  color: var(--main-color);
+
+}
+
+/*banner header, dar tamaño*/
+.banner-header {
+
+  height: 60vh;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: rgb(88, 37, 194);
+
+  background: linear-gradient(
+
+      45deg,
+
+      rgba(88, 37, 194, 0.4) 36%,
+
+      rgba(208, 25, 207, 0.4) 100%
+
+    ),
+
+    url("../img/developer.jpg");
+
+  background-repeat: no-repeat;
+
+  background-position: center;
+
+  background-size: cover;
+
+}
+
+img {
+  object-fit: cover;
+}
+
+.banner-header-text {
+  height: 100%;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+
+.banner-title {
+  font-size: 2em;
+  padding-bottom: 20px;
+}
+
+.banner-title span {
+  color: var(--primary-color)
+}
+
+.btn {
+  padding: 10px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 15px;/*borde a los lados*/
+  margin-top: 20px;
+  cursor:pointer;
+}
+/*Seccion de portafolio*/
+.box img {
+  width: 100%;/*imagen ancho imagen*/
+  border: 2px solid var(--secondary-color);
+  border-radius: 20px;
+
+}
+/*colocar mismo tamaño de imagenes*/
+.card-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card-projects h3 {
+  color: white; /* Cambia el color a blanco */
+  text-align: center; /* Centra el texto */
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente si lo deseas */
+  margin: 0; /* Elimina márgenes innecesarios si lo deseas */
+}
+.card-projects img {
+  width: 100%;
+  height: 200px; /* O el tamaño que prefieras */
+  object-fit: cover; /* Para mantener la proporción de la imagen y recortarla si es necesario */
+}
+.portafolio h3 {
+  text-align: center;
+}
+/*movimiento imagen*/
+/* Movimiento de la imagen al pasar el cursor */
+.box:hover img {
+  transform: translateY(-15px); /* Movimiento hacia arriba */
+  border: 2px solid var(--primary-color); /* Cambiar borde al pasar el cursor */
+  transition: transform 0.3s ease, border 0.3s ease; /* Transición suave */
+}
+/*centrar texto*/
+.hereme {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.justificado {
+  text-align: justify;
+}
+.text {
+  text-align: justify;
+}
+
+/*Estilo footer*/
+.main-footer {
+  height: 80px;
+  padding-top: 20px;
+}
+
+.main-footer p {
+  float: left;
+}
+
+.main-footer ul {
+  float: right;
+  list-style: none;
+}
+
+.main-footer ul li {
+  float: left;
+}
+
+.main-footer ul li i {
+  color: var(--primary-color);
+}
+
+.main-footer ul li a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+/* Contact */
+
+.card-info {
+
+  display: grid; /* Define el contenedor como una cuadrícula */
+
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+
+  gap: 20px; /* Espacio de 20px entre filas y columnas */
+
+  text-align: center;
+
+}
+
+.form-map {
+
+  margin: 30px;
+
+  display: grid; /* Define el contenedor como una cuadrícula */
+
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+
+  gap: 20px;
+
+}
+
+.form-map iframe {
+
+  height: 400px;
+
+  width: 100%;
+
+}
+
+.box-form .input-form {
+
+  margin-bottom: 20px;
+
+}
+
+.box-form input,
+.box-form textarea {
+width: 100%;
+padding: 10px;
+border: 2px var(--secondary-color) solid;
+border-radius: 10px;
+background-color: var(--main-color);
+color: var(--secondary-color);
+}
+
+.box-form input:focus,
+.box-form textarea:focus {
+background-color: var(--secondary-color);
+color: var(--main-color);
+
+}
+
+.box-form textarea {
+height: 200px;
+}
+.box-form input:focus,
+.box-form textarea:focus {
+outline: none;
+border-color: var(--main-color);
+
+}
+
+.box-form button {
+width: 100%;
+
+}
+
+/* Projects */
+.single-project-info {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Una fila para arriba, dos filas iguales para las columnas en el medio, y una fila para abajo */
+  grid-template-columns: 1fr 1fr; /* Dos columnas para las secciones izquierda y derecha */
+  grid-gap: 20px;
+}
+
+.single-project-description,
+.single-project-btn {
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.single-project-img img {
+  width: 100%;
+  border: 2px solid var(--secondary-color);
+  border-radius: 20px;
+  height: 400px;
+  transition: transform 0.3s ease;
+}
+.single-project-img img:hover {
+  transform: scale(1.05); /* Aumenta el tamaño de la imagen */
+  /* También puedes usar translate para moverla */
+  transform: translateY(-10px); /* Mueve la imagen hacia arriba */
+}
+.single-project-details ul {
+  list-style: none;
+  padding-bottom: 20px;
+}
+
+.single-project-btn .prev {
+  float: left;
+}
+
+.single-project-btn .next {
+  float: right;
+}
